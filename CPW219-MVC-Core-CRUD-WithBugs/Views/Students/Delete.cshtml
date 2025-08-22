@@ -1,4 +1,4 @@
-﻿@* Model binding? Not sure what to put here *@
+﻿@model CPW219_MVC_Core_CRUD_WithBugs.Models.Student
 
 @{
     ViewData["Title"] = "Delete Student";
@@ -75,7 +75,8 @@
                         </div>
                     </div>
                     
-                    <form asp-action="Delete" class="mt-4">
+                    <form asp-action="Delete" asp-route-id="@Model.StudentId" method="post" style="display:inline;">
+                        @Html.AntiForgeryToken()
                         <input type="hidden" asp-for="StudentId" />
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                             <a asp-action="Index" class="btn btn-outline-secondary btn-lg me-md-2">
