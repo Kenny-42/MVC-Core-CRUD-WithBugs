@@ -161,7 +161,9 @@ public class StudentsController : Controller
             await _context.SaveChangesAsync();
         }
 
-        return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index));
+        }
+        return NotFound();
     }
 
     private bool StudentExists(int id)
