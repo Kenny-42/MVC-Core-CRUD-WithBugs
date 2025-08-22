@@ -160,10 +160,7 @@ public class StudentsController : Controller
             _context.Student.Remove(student);
             await _context.SaveChangesAsync();
         }
-
-            return RedirectToAction(nameof(Index));
-        }
-        return NotFound();
+        return RedirectToAction(nameof(Index));
     }
 
     private bool StudentExists(int id)
